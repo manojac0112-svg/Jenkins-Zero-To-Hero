@@ -12,6 +12,16 @@ pipeline {
             url: 'https://github.com/manojac0112-svg/Jenkins-Zero-To-Hero.git'
       }
     }
+    stage('Verify Git') {
+      steps {
+         sh '''
+             pwd
+             ls -la
+             git status
+             git remote -v
+         '''
+      }
+    }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
